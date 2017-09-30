@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AndroidO</string>
+    <string name="btn_notification_channel">Notification Channel</string>
 </resources>

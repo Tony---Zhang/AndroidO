@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">AndroidO</string>
     <string name="btn_notification_channel">Notification Channel</string>
+    <string name="btn_send1">SEND1</string>
+    <string name="btn_send2">SEND2</string>
+    <string name="radio_urgent">Urgent</string>
+    <string name="radio_high">High</string>
+    <string name="radio_medium">Medium</string>
+    <string name="radio_low">Low</string>
+    <string name="toggle_lockscreen_visibility">Lockscreen Visibility</string>
+    <string name="toggle_public">PUBLIC</string>
+    <string name="toggle_private">PRIVATE</string>
 </resources>

@@ -1,6 +1,12 @@
 <resources>
+    <string-array name="test1">
+        <item>test1_hello</item>
+        <item>test1_hello2</item>
+    </string-array>
+
     <string name="app_name">AndroidO</string>
     <string name="btn_notification_channel">Notification Channel</string>
+    <string name="btn_meta_data">Meta Data</string>
     <string name="btn_send1">SEND1</string>
     <string name="btn_send2">SEND2</string>
     <string name="radio_urgent">Urgent</string>
@@ -10,4 +16,8 @@
     <string name="toggle_lockscreen_visibility">Lockscreen Visibility</string>
     <string name="toggle_public">PUBLIC</string>
     <string name="toggle_private">PRIVATE</string>
+    <string name="btn_meta_string">From Mainfest</string>
+    <string name="btn_meta_string_array">From String Array</string>
+    <string name="btn_meta_string_json">From JSON</string>
+    <string name="btn_meta_string_xml">From XML</string>
 </resources>

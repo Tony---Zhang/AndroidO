@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<meta-data>
+    <activity>
+        <item
+            name="com.thoughtworks.home.MainActivity"
+            alias="home" />
+        <item
+            name="com.thoughtworks.test.TestActivity"
+            alias="test" />
+    </activity>
+</meta-data>

@@ -1,0 +1,12 @@
+{
+  "activity": [
+    {
+      "name": "com.thoughtworks.home.MainActivity",
+      "alias": "home"
+    },
+    {
+      "name": "com.thoughtworks.test.TestActivity",
+      "alias": "test"
+    }
+  ]
+}

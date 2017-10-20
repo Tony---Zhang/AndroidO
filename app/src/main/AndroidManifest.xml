@@ -9,6 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="export_activity"
+            android:value="home=com.thoughtworks.works.me.MainActivity" />
+        <meta-data
+            android:name="export_activity_array"
+            android:resource="@array/test1" />
+        <meta-data
+            android:name="export_xml"
+            android:resource="@xml/meta_data" />
+        <meta-data
+            android:name="export_json"
+            android:resource="@raw/meta_data" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,7 +29,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NotificationActivity"></activity>
+        <activity android:name=".NotificationActivity" />
+        <activity android:name=".MetaDataTestActivity"></activity>
     </application>
 
 </manifest>

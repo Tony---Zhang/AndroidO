@@ -21,4 +21,13 @@
         android:text="@string/btn_notification_channel"
         app:layout_constraintTop_toBottomOf="@+id/hello_text" />
 
+    <Button
+        android:id="@+id/btn_meta_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/btn_meta_data"
+        app:layout_constraintTop_toBottomOf="@+id/btn_notification_channel" />
+
 </android.support.constraint.ConstraintLayout>

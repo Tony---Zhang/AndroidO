@@ -3,9 +3,11 @@
     <activity>
         <item
             name="com.thoughtworks.home.MainActivity"
-            alias="home" />
+            alias="home"
+            type="activity" />
         <item
             name="com.thoughtworks.test.TestActivity"
-            alias="test" />
+            alias="test"
+            type="activity" />
     </activity>
 </meta-data>

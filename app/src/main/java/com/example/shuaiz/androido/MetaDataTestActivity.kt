@@ -49,7 +49,8 @@ class MetaDataTestActivity : AppCompatActivity() {
                         if (tagName != null && tagName == "item") {
                             val name = xrp.getAttributeValue(null, "name")
                             val alias = xrp.getAttributeValue(null, "alias")
-                            result += "\"export_activity_json\": name: $name, alias: $alias"
+                            val type = xrp.getAttributeValue(null, "type")
+                            result += "\"export_activity_xml\": name: $name, alias: $alias, type: $type"
                         }
                     }
                     else -> {

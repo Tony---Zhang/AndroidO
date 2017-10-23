@@ -23,7 +23,7 @@
             android:resource="@raw/meta_data" />
         <meta-data
             android:name="export_json_inline"
-            android:value="{'activity':[{'name':'com.thoughtworks.home.MainActivity','alias':'home','type':'activity'},{'name':'com.thoughtworks.test.TestActivity','alias':'test','type':'activity'}]}" />
+            android:value="{'activities':[{'name':'com.thoughtworks.home.MainActivity','alias':'home','type':'activity'},{'name':'com.thoughtworks.test.TestActivity','alias':'test','type':'activity'}]}" />
         <meta-data
             android:name="export_string_split"
             android:value="com.thoughtworks.home.MainActivity|home|activity;com.thoughtworks.test.TestActivity|alias|activity" />

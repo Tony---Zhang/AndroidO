@@ -1,5 +1,5 @@
 {
-  "activity": [
+  "activities": [
     {
       "name": "com.thoughtworks.home.MainActivity",
       "alias": "home",

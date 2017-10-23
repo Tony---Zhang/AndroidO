@@ -46,15 +46,13 @@ class MetaDataTestActivity : AppCompatActivity() {
 
     private fun getJsonMetaDataFromRaw(applicationInfo: ApplicationInfo): String {
         val json = applicationInfo.metaData.getInt("export_json")
-        val reader = BufferedReader(InputStreamReader(resources.openRawResource(json)))
-        val jsonData = reader.use { it.readText() }
-        val fromJson = Gson().fromJson(jsonData, UI::class.java)
+        val fromJson = Gson().fromJson(InputStreamReader(resources.openRawResource(json)), UI::class.java)
         return "\"export_activity_json\": \n$fromJson"
     }
 
     private fun getJsonInlineMetaDataFromMainfest(applicationInfo: ApplicationInfo): String {
-        val jsonData = applicationInfo.metaData.getString("export_json_inline")
-        val fromJson = Gson().fromJson(jsonData, UI::class.java)
+        val json = applicationInfo.metaData.getString("export_json_inline")
+        val fromJson = Gson().fromJson(json, UI::class.java)
         return "\"export_activity_json_inline\": \n$fromJson"
     }
 

@@ -6,18 +6,40 @@
     android:layout_height="match_parent"
     tools:context="com.example.shuaiz.androido.MetaDataTestActivity">
 
-    <Button
-        android:id="@+id/btn_meta_string"
+    <RelativeLayout
+        android:id="@+id/btn_meta_data_manifest_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_meta_string" />
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_meta_string"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/manifest_space"
+            android:text="@string/btn_meta_string" />
+
+        <Space
+            android:id="@+id/manifest_space"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/btn_meta_split"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/manifest_space"
+            android:text="@string/btn_meta_split" />
+
+    </RelativeLayout>
 
     <Button
         android:id="@+id/btn_meta_string_array"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/btn_meta_string_array"
-        app:layout_constraintTop_toBottomOf="@id/btn_meta_string" />
+        app:layout_constraintTop_toBottomOf="@id/btn_meta_data_manifest_container" />
 
     <RelativeLayout
         android:id="@+id/btn_meta_data_json_container"

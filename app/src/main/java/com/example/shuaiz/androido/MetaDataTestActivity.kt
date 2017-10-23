@@ -8,9 +8,9 @@ import android.widget.TextView
 import butterknife.BindView
 import butterknife.ButterKnife
 import butterknife.OnClick
+import com.example.shuaiz.androido.model.UIModel
 import com.example.shuaiz.androido.model.UI
 import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import org.xmlpull.v1.XmlPullParser
 import java.io.BufferedReader
 import java.io.InputStreamReader
@@ -26,7 +26,18 @@ class MetaDataTestActivity : AppCompatActivity() {
         ButterKnife.bind(this)
     }
 
-    private fun getStringFromMainfest(applicationInfo: ApplicationInfo) = "\"export_activity\": ${applicationInfo.metaData.getString("export_activity")}"
+    private fun getStringFromManifest(applicationInfo: ApplicationInfo) = "\"export_activity\": ${applicationInfo.metaData.getString("export_activity")}"
+
+    private fun getSplitStringFromManifest(applicationInfo: ApplicationInfo): String {
+        val splitString = applicationInfo.metaData.getString("export_string_split")
+        val uiGroups = splitString.split(";")
+        val uiList = uiGroups.map {
+            val uiData = it.trim().split("|")
+            val activity = UIModel(uiData[0].trim(), uiData[1].trim(), uiData[2].trim())
+            activity
+        }
+        return "\"export_activity_split\": \n$uiList"
+    }
 
     private fun getArrayMetaDataFromStringString(applicationInfo: ApplicationInfo): String {
         val arrayId = applicationInfo.metaData.getInt("export_activity_array")
@@ -80,8 +91,8 @@ class MetaDataTestActivity : AppCompatActivity() {
     }
 
     @OnClick(R.id.btn_meta_string)
-    fun fromMainfest(): Unit {
-        resultTextView.text = getStringFromMainfest(getMetaDataApplicationInfo())
+    fun fromManifest(): Unit {
+        resultTextView.text = getStringFromManifest(getMetaDataApplicationInfo())
     }
 
     @OnClick(R.id.btn_meta_string_array)
@@ -102,5 +113,10 @@ class MetaDataTestActivity : AppCompatActivity() {
     @OnClick(R.id.btn_meta_string_json_inline)
     fun fromJsonInline(): Unit {
         resultTextView.text = getJsonInlineMetaDataFromMainfest(getMetaDataApplicationInfo())
+    }
+
+    @OnClick(R.id.btn_meta_split)
+    fun fromManifestSplit(): Unit {
+        resultTextView.text = getSplitStringFromManifest(getMetaDataApplicationInfo())
     }
 }

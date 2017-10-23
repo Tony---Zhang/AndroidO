@@ -16,7 +16,8 @@
     <string name="toggle_lockscreen_visibility">Lockscreen Visibility</string>
     <string name="toggle_public">PUBLIC</string>
     <string name="toggle_private">PRIVATE</string>
-    <string name="btn_meta_string">From Mainfest</string>
+    <string name="btn_meta_string">From Manifest</string>
+    <string name="btn_meta_split">From Manifest Split</string>
     <string name="btn_meta_string_array">From String Array</string>
     <string name="btn_meta_string_json">From JSON</string>
     <string name="btn_meta_string_xml">From XML</string>

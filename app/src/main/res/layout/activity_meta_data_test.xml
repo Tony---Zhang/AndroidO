@@ -19,19 +19,40 @@
         android:text="@string/btn_meta_string_array"
         app:layout_constraintTop_toBottomOf="@id/btn_meta_string" />
 
-    <Button
-        android:id="@+id/btn_meta_string_json"
+    <RelativeLayout
+        android:id="@+id/btn_meta_data_json_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btn_meta_string_json"
-        app:layout_constraintTop_toBottomOf="@id/btn_meta_string_array" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_meta_string_array">
+
+        <Button
+            android:id="@+id/btn_meta_string_json"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/json_space"
+            android:text="@string/btn_meta_string_json" />
+
+        <Space
+            android:id="@+id/json_space"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/btn_meta_string_json_inline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/json_space"
+            android:text="@string/btn_meta_string_json_inline" />
+    </RelativeLayout>
 
     <Button
         android:id="@+id/btn_meta_string_xml"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/btn_meta_string_xml"
-        app:layout_constraintTop_toBottomOf="@id/btn_meta_string_json" />
+        app:layout_constraintTop_toBottomOf="@id/btn_meta_data_json_container" />
 
     <TextView
         android:id="@+id/meta_data_result"

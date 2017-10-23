@@ -21,6 +21,9 @@
         <meta-data
             android:name="export_json"
             android:resource="@raw/meta_data" />
+        <meta-data
+            android:name="export_json_inline"
+            android:value="{'activity':[{'name':'com.thoughtworks.home.MainActivity','alias':'home','type':'activity'},{'name':'com.thoughtworks.test.TestActivity','alias':'test','type':'activity'}]}" />
 
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -8,6 +8,9 @@ import android.widget.TextView
 import butterknife.BindView
 import butterknife.ButterKnife
 import butterknife.OnClick
+import com.example.shuaiz.androido.model.UI
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import org.xmlpull.v1.XmlPullParser
 import java.io.BufferedReader
 import java.io.InputStreamReader
@@ -33,7 +36,15 @@ class MetaDataTestActivity : AppCompatActivity() {
     private fun getJsonMetaDataFromRaw(applicationInfo: ApplicationInfo): String {
         val json = applicationInfo.metaData.getInt("export_json")
         val reader = BufferedReader(InputStreamReader(resources.openRawResource(json)))
-        return "\"export_activity_json\": ${reader.use { it.readText() }}"
+        val jsonData = reader.use { it.readText() }
+        val fromJson = Gson().fromJson(jsonData, UI::class.java)
+        return "\"export_activity_json\": \n$fromJson"
+    }
+
+    private fun getJsonInlineMetaDataFromMainfest(applicationInfo: ApplicationInfo): String {
+        val jsonData = applicationInfo.metaData.getString("export_json_inline")
+        val fromJson = Gson().fromJson(jsonData, UI::class.java)
+        return "\"export_activity_json_inline\": \n$fromJson"
     }
 
     private fun getXmlMetaDataFromXml(applicationInfo: ApplicationInfo): String {
@@ -86,5 +97,10 @@ class MetaDataTestActivity : AppCompatActivity() {
     @OnClick(R.id.btn_meta_string_xml)
     fun fromXml(): Unit {
         resultTextView.text = getXmlMetaDataFromXml(getMetaDataApplicationInfo())
+    }
+
+    @OnClick(R.id.btn_meta_string_json_inline)
+    fun fromJsonInline(): Unit {
+        resultTextView.text = getJsonInlineMetaDataFromMainfest(getMetaDataApplicationInfo())
     }
 }

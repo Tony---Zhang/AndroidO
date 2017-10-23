@@ -20,4 +20,5 @@
     <string name="btn_meta_string_array">From String Array</string>
     <string name="btn_meta_string_json">From JSON</string>
     <string name="btn_meta_string_xml">From XML</string>
+    <string name="btn_meta_string_json_inline">From Json Inline</string>
 </resources>

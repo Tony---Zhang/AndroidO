@@ -61,7 +61,7 @@ class MetaDataTestActivity : AppCompatActivity() {
     private fun getXmlMetaDataFromXml(applicationInfo: ApplicationInfo): String {
         val xml = applicationInfo.metaData.getInt("export_xml")
         val xrp = resources.getXml(xml)
-        var result = ""
+        val activities = mutableListOf<UIModel>()
         try {
             var eventType = xrp.getEventType()
             while (eventType !== XmlPullParser.END_DOCUMENT) {
@@ -72,7 +72,7 @@ class MetaDataTestActivity : AppCompatActivity() {
                             val name = xrp.getAttributeValue(null, "name")
                             val alias = xrp.getAttributeValue(null, "alias")
                             val type = xrp.getAttributeValue(null, "type")
-                            result += "\"export_activity_xml\": name: $name, alias: $alias, type: $type"
+                            activities.add(UIModel(name, alias, type))
                         }
                     }
                     else -> {
@@ -82,7 +82,7 @@ class MetaDataTestActivity : AppCompatActivity() {
             }
         } catch (e: Exception) {
         }
-        return result
+        return "\"export_activity_xml\": \n${UI(activities)}"
     }
 
     private fun getMetaDataApplicationInfo(): ApplicationInfo {
